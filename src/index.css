@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  position: relative;
+  background-color: azure;
+}
+
+#root {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header-container {
+  border-radius: 0 15px 15px 0;
+  left: 0;
+  position: fixed;
+}
+
+.header-logo {
+  border-radius: 0 15px 15px 0;
+  transition: all;
+  cursor: pointer;
+}
+
+.header-logo-bg {
+  width: 103px;
+  height: 50%;
+  border-radius: 15px 0 15px 0;
+  transition: 0.3s;
+  background-color: #9e87fa;
+}
+
+.header-logo:hover .header-logo-bg {
+  height: 85%;
+}
+
+.header-logo:active .header-logo-bg {
+  opacity: 0.4;
+}
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.moon-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.home-invoices {
+  border: 2px solid white;
+}
+.home-invoices:hover {
+  border-color: #7c5dfa;
+}
