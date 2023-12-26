@@ -4,11 +4,22 @@ import { useFetch } from "../hooks/useFetch";
 import Pastga from "../assets/icon-arrow-down.svg";
 import AddPage from "../assets/favicon-32x32.png";
 import Ongga from "../assets/icon-arrow-right.svg";
+import { Link, Navigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const url = "http://localhost:3000/data";
-function Home() {
+
+function Home({ setInvoiceId }) {
   const api = useFetch(url);
   const data = api.data;
+
+  const handleId = (id) => {
+    setInvoiceId(id);
+  };
+
+  useEffect(() => {
+    console.log(url);
+  }, [url]);
   return (
     <div className="flex flex-col w-full max-w-[800px] mx-auto">
       <div className="flex justify-between w-full max-w-[800px] mb-[65px]">
@@ -30,10 +41,11 @@ function Home() {
       <div className="flex flex-col gap-4">
         {data &&
           data.map((dat) => {
-            console.log(dat);
             return (
-              <button
-                className="home-invoices flex justify-around items-center bg-white py-7 rounded-[8px]"
+              <Link
+                to={`invoicepage/:${dat.id}`}
+                onClick={() => handleId(dat.id)}
+                className="home-invoices flex justify-around items-center bg-white py-7 rounded-[8px] cursor-pointer"
                 key={dat.id}
               >
                 <h2>{dat.id}</h2>
@@ -67,7 +79,7 @@ function Home() {
                     <img src={Ongga} alt="O'ngga strelka" />
                   </div>
                 )}
-              </button>
+              </Link>
             );
           })}
       </div>
