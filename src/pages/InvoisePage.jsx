@@ -1,3 +1,6 @@
+// rrd import
+import { Link } from "react-router-dom";
+// hooks
 import { useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 
@@ -16,6 +19,9 @@ function InvoisePage() {
       )}
       {data && (
         <div className="flex flex-col w-full max-w-[800px] mx-auto">
+            <div className="p-3 text-2xl">
+                <Link to="/">Go To Back</Link>
+            </div>
           <div className="flex justify-between w-full max-w-[800px] mb-[65px] px-8 py-5 border-radius bg-slate-50">
             <div className="flex gap-4 justify-center items-center">
               <h2 className="font-mono text-3xl text-[#858BB2]">Status</h2>
