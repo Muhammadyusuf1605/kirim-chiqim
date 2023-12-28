@@ -4,6 +4,7 @@ import { useFetch } from "../hooks/useFetch";
 import Pastga from "../assets/icon-arrow-down.svg";
 import AddPage from "../assets/favicon-32x32.png";
 import InvoicesList from "../components/InvoicesList";
+import NoINvoicesPage from "./NoINvoicesPage";
 
 const url = "http://localhost:3000/data";
 
@@ -59,6 +60,7 @@ function Home() {
         </h3>
       )}
       {data && <InvoicesList data={data} />}
+      {!data && <NoINvoicesPage isPending={isPending}/>}
     </div>
   );
 }

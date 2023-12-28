@@ -12,10 +12,12 @@ function InvoisePage() {
   return (
     <>
       {isPending && (
+        <div className="flex flex-col w-full max-w-[800px] mx-auto">
         <h2 className="text-5xl flex gap-2">
           Loading
           <span className="loading loading-bars loading-lg"></span>
         </h2>
+        </div>
       )}
       {data && (
         <div className="flex flex-col w-full max-w-[800px] mx-auto">
@@ -74,7 +76,7 @@ function InvoisePage() {
                         className="drawer-overlay"></label>
                       <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                         {/* Sidebar content here */}
-                        <h2 className="text-5xl">Edit #{data.id ? data.id : "No id"}</h2>
+                        <h2 className="text-3xl">Edit #{data.id ? data.id : "No id"}</h2>
                       </ul>
                     </div>
                   </div>
